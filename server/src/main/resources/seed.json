@@ -1,0 +1,1118 @@
+{
+  "knowledge": [
+    {
+      "id": 1,
+      "title": "算法复杂度",
+      "category": "算法基础",
+      "description": "理解时间与空间复杂度，用增长率衡量算法的规模成本。",
+      "difficulty": 2,
+      "minutes": 25,
+      "importance": 1.0,
+      "x": 90,
+      "y": 180,
+      "content": "## 核心概念\n忽略常数和低阶项，关注输入规模 n 增大时的增长趋势。顺序步骤取最大阶，嵌套循环通常相乘。\n\n## 理解一个例子\n一次遍历 n 个元素需要 O(n) 时间；二分搜索每次将区间减半，需要 O(log n) 时间。\n\n## 常见误区\n复杂度描述增长率，不能直接比较不同机器上的运行秒数。\n\n## 自检建议\n先用自己的语言解释核心概念，再完成诊断测验。学习时间只能记录投入，不能单独证明理解。"
+    },
+    {
+      "id": 2,
+      "title": "数组与顺序表",
+      "category": "线性结构",
+      "description": "连续内存中的线性结构，理解随机访问与插入成本。",
+      "difficulty": 2,
+      "minutes": 30,
+      "importance": 0.9,
+      "x": 260,
+      "y": 100,
+      "content": "## 核心概念\n数组以连续地址存储同类型元素，按索引访问只需计算偏移。中间插入要移动后续元素。\n\n## 理解一个例子\n在长度 n 的数组头部插入一个元素，最多移动 n 个元素，因此时间复杂度为 O(n)。\n\n## 常见误区\n动态数组扩容有摊还成本，但单次扩容可能仍为 O(n)。\n\n## 自检建议\n先用自己的语言解释核心概念，再完成诊断测验。学习时间只能记录投入，不能单独证明理解。"
+    },
+    {
+      "id": 3,
+      "title": "链表",
+      "category": "线性结构",
+      "description": "掌握指针连接、节点插入与单向遍历的基本原理。",
+      "difficulty": 3,
+      "minutes": 35,
+      "importance": 0.85,
+      "x": 260,
+      "y": 265,
+      "content": "## 核心概念\n链表不要求节点连续存储。已知前驱节点时，插入和删除只需修改少量指针。\n\n## 理解一个例子\n删除单链表节点时，将前驱的 next 指向被删除节点的 next；要先保存需要的引用。\n\n## 常见误区\n链表按索引查找需要遍历，不能把插入 O(1) 与查找 O(n) 混为一谈。\n\n## 自检建议\n先用自己的语言解释核心概念，再完成诊断测验。学习时间只能记录投入，不能单独证明理解。"
+    },
+    {
+      "id": 4,
+      "title": "栈",
+      "category": "线性结构",
+      "description": "理解后进先出，应用于括号匹配、回溯与调用栈。",
+      "difficulty": 3,
+      "minutes": 25,
+      "importance": 0.9,
+      "x": 420,
+      "y": 90,
+      "content": "## 核心概念\n栈只允许在栈顶压入和弹出元素，遵循 LIFO。栈顶元素是最近加入的元素。\n\n## 理解一个例子\n括号匹配中遇到左括号入栈，遇到右括号检查栈顶是否匹配；最终栈应为空。\n\n## 常见误区\n弹栈前必须检查空栈；递归过深会超过运行时调用栈限制。\n\n## 自检建议\n先用自己的语言解释核心概念，再完成诊断测验。学习时间只能记录投入，不能单独证明理解。"
+    },
+    {
+      "id": 5,
+      "title": "队列",
+      "category": "线性结构",
+      "description": "掌握先进先出与循环队列，理解层序处理。",
+      "difficulty": 3,
+      "minutes": 25,
+      "importance": 0.9,
+      "x": 420,
+      "y": 265,
+      "content": "## 核心概念\n队列在尾部入队、头部出队，遵循 FIFO。循环队列用取模让索引在数组内循环。\n\n## 理解一个例子\n容量为 m 时，尾指针每次更新为 (rear + 1) % m。可预留一个空位区分空与满。\n\n## 常见误区\n只比较 front == rear 无法同时区分空队列和满队列，需要长度或预留槽位。\n\n## 自检建议\n先用自己的语言解释核心概念，再完成诊断测验。学习时间只能记录投入，不能单独证明理解。"
+    },
+    {
+      "id": 6,
+      "title": "哈希表",
+      "category": "线性结构",
+      "description": "通过哈希函数定位记录，并处理碰撞与负载因子。",
+      "difficulty": 5,
+      "minutes": 45,
+      "importance": 0.8,
+      "x": 430,
+      "y": 435,
+      "content": "## 核心概念\n哈希表将键映射到桶位置。链地址法和开放寻址法都是解决碰撞的策略。\n\n## 理解一个例子\n负载因子是记录数与桶数的比值。增大桶数并重新哈希可减少平均碰撞长度。\n\n## 常见误区\n平均 O(1) 查找需要合适的散列函数与负载；最坏情况可能退化为 O(n)。\n\n## 自检建议\n先用自己的语言解释核心概念，再完成诊断测验。学习时间只能记录投入，不能单独证明理解。"
+    },
+    {
+      "id": 7,
+      "title": "递归与分治",
+      "category": "算法基础",
+      "description": "建立终止条件，将问题分解成规模更小的同类子问题。",
+      "difficulty": 4,
+      "minutes": 40,
+      "importance": 0.95,
+      "x": 265,
+      "y": 435,
+      "content": "## 核心概念\n递归必须包含终止条件与向终止条件推进的步骤。分治包括分解、求解和合并。\n\n## 理解一个例子\n归并排序把数组分成两半，递归排序两半，再线性合并，得到 O(n log n) 时间。\n\n## 常见误区\n有些递归算法重复计算相同子问题，可使用记忆化缓存避免重复。\n\n## 自检建议\n先用自己的语言解释核心概念，再完成诊断测验。学习时间只能记录投入，不能单独证明理解。"
+    },
+    {
+      "id": 8,
+      "title": "二叉树",
+      "category": "树与搜索",
+      "description": "理解节点、子树、树高与二叉树的结构性质。",
+      "difficulty": 4,
+      "minutes": 35,
+      "importance": 0.95,
+      "x": 590,
+      "y": 175,
+      "content": "## 核心概念\n二叉树每个节点最多有两个子节点。满二叉树与完全二叉树是不同的结构概念。\n\n## 理解一个例子\n非空满二叉树中，如果叶子节点有 L 个，则内部节点数为 L-1。\n\n## 常见误区\n二叉树不一定有序，也不一定平衡；结构性质不能直接推导搜索效率。\n\n## 自检建议\n先用自己的语言解释核心概念，再完成诊断测验。学习时间只能记录投入，不能单独证明理解。"
+    },
+    {
+      "id": 9,
+      "title": "树的遍历",
+      "category": "树与搜索",
+      "description": "掌握前序、中序、后序和层序遍历的访问顺序。",
+      "difficulty": 5,
+      "minutes": 45,
+      "importance": 1.0,
+      "x": 750,
+      "y": 95,
+      "content": "## 核心概念\n前序先根再左右，中序先左再根右，后序先左右再根。层序遍历使用队列。\n\n## 理解一个例子\n对根 A、左子 B、右子 C 的树，中序遍历是 B A C，后序遍历是 B C A。\n\n## 常见误区\n中序输出有序只对二叉搜索树成立，对一般二叉树并不成立。\n\n## 自检建议\n先用自己的语言解释核心概念，再完成诊断测验。学习时间只能记录投入，不能单独证明理解。"
+    },
+    {
+      "id": 10,
+      "title": "二叉搜索树",
+      "category": "树与搜索",
+      "description": "利用左右子树的大小关系进行查找、插入与删除。",
+      "difficulty": 6,
+      "minutes": 45,
+      "importance": 0.9,
+      "x": 750,
+      "y": 265,
+      "content": "## 核心概念\n每个节点的左子树键值较小，右子树键值较大。搜索方向由键值比较决定。\n\n## 理解一个例子\n依次插入升序键可能形成链状树，查找退化为 O(n)，需要平衡策略。\n\n## 常见误区\n重复键应有明确策略；删除双子节点时可以用中序后继替代。\n\n## 自检建议\n先用自己的语言解释核心概念，再完成诊断测验。学习时间只能记录投入，不能单独证明理解。"
+    },
+    {
+      "id": 11,
+      "title": "堆与优先队列",
+      "category": "树与搜索",
+      "description": "理解堆的形状约束和有序约束，支持最值优先处理。",
+      "difficulty": 6,
+      "minutes": 45,
+      "importance": 0.85,
+      "x": 595,
+      "y": 435,
+      "content": "## 核心概念\n二叉堆是完全二叉树。小根堆中每个父节点的键不大于子节点，但兄弟之间不保证有序。\n\n## 理解一个例子\n数组从 0 开始时，节点 i 的左右孩子索引分别是 2i+1 和 2i+2。\n\n## 常见误区\n建堆可在 O(n) 完成；反复插入 n 个元素通常需要 O(n log n)。\n\n## 自检建议\n先用自己的语言解释核心概念，再完成诊断测验。学习时间只能记录投入，不能单独证明理解。"
+    },
+    {
+      "id": 12,
+      "title": "图的表示",
+      "category": "图与优化",
+      "description": "比较邻接矩阵与邻接表，建模有向、无向与带权关系。",
+      "difficulty": 5,
+      "minutes": 35,
+      "importance": 1.0,
+      "x": 740,
+      "y": 435,
+      "content": "## 核心概念\n邻接矩阵适合密集图与快速判断边；邻接表适合稀疏图并节省空间。\n\n## 理解一个例子\nn 个顶点、m 条边的有向图，邻接表存储规模通常为 O(n+m)。\n\n## 常见误区\n有向边有方向；知识点先修关系应由前置知识指向后续知识。\n\n## 自检建议\n先用自己的语言解释核心概念，再完成诊断测验。学习时间只能记录投入，不能单独证明理解。"
+    },
+    {
+      "id": 13,
+      "title": "深度优先搜索",
+      "category": "图与优化",
+      "description": "沿一条分支深入，理解递归、显式栈与访问标记。",
+      "difficulty": 6,
+      "minutes": 40,
+      "importance": 0.9,
+      "x": 895,
+      "y": 265,
+      "content": "## 核心概念\nDFS 在到达节点时标记已访问，再探索未访问邻居。使用三色状态可区分已完成节点与递归栈节点。\n\n## 理解一个例子\n有向图中访问到仍在递归栈中的节点，说明发现回边并存在环。\n\n## 常见误区\nDFS 访问顺序不保证无权图最短路径；应使用 BFS 求最少边数。\n\n## 自检建议\n先用自己的语言解释核心概念，再完成诊断测验。学习时间只能记录投入，不能单独证明理解。"
+    },
+    {
+      "id": 14,
+      "title": "广度优先搜索",
+      "category": "图与优化",
+      "description": "按距离分层扩展，在无权图中求最少边数路径。",
+      "difficulty": 6,
+      "minutes": 40,
+      "importance": 0.95,
+      "x": 900,
+      "y": 435,
+      "content": "## 核心概念\nBFS 使用队列，每个节点首次访问时得到其最少边数距离。入队时标记可避免重复入队。\n\n## 理解一个例子\n从起点距离 0 出发，邻居距离加 1，并记录前驱即可重建最短路径。\n\n## 常见误区\n有不同边权时，BFS 的层数不再表示总代价，应使用适合边权的算法。\n\n## 自检建议\n先用自己的语言解释核心概念，再完成诊断测验。学习时间只能记录投入，不能单独证明理解。"
+    },
+    {
+      "id": 15,
+      "title": "拓扑排序",
+      "category": "图与优化",
+      "description": "在有向无环图上生成满足所有先修关系的顺序。",
+      "difficulty": 7,
+      "minutes": 45,
+      "importance": 1.0,
+      "x": 1060,
+      "y": 105,
+      "content": "## 核心概念\nKahn 算法维护入度为 0 的就绪集合，弹出节点后递减后继入度。多种合法顺序可能同时存在。\n\n## 理解一个例子\n如果输出节点数小于图的节点数，仍有节点无法就绪，说明图中存在环。\n\n## 常见误区\n难度排序只能在就绪集合内部进行；对最终序列随意重排会破坏依赖。\n\n## 自检建议\n先用自己的语言解释核心概念，再完成诊断测验。学习时间只能记录投入，不能单独证明理解。"
+    },
+    {
+      "id": 16,
+      "title": "Dijkstra 最短路径",
+      "category": "图与优化",
+      "description": "对非负边权图逐步松弛，使用优先队列加速选择。",
+      "difficulty": 8,
+      "minutes": 60,
+      "importance": 0.95,
+      "x": 1060,
+      "y": 330,
+      "content": "## 核心概念\nDijkstra 每次选择当前距离最小的未确定顶点，松弛其出边。所有边权必须非负。\n\n## 理解一个例子\n用优先队列时可允许同一顶点多次入队，弹出时忽略已失效的较大距离。\n\n## 常见误区\n负权边可能使已经确定的距离后来变小，破坏 Dijkstra 的正确性依据。\n\n## 自检建议\n先用自己的语言解释核心概念，再完成诊断测验。学习时间只能记录投入，不能单独证明理解。"
+    },
+    {
+      "id": 17,
+      "title": "动态规划",
+      "category": "算法基础",
+      "description": "通过状态、转移与边界条件复用重叠子问题结果。",
+      "difficulty": 8,
+      "minutes": 60,
+      "importance": 0.9,
+      "x": 915,
+      "y": 590,
+      "content": "## 核心概念\n动态规划需要定义状态的含义、转移方程、初始条件及计算顺序。状态信息必须足以决定后续。\n\n## 理解一个例子\n0/1 背包的一维优化中，容量倒序遍历以避免同一物品在一轮被重复使用。\n\n## 常见误区\n记忆化是求值方式；关键仍然是正确的状态定义与子问题依赖。\n\n## 自检建议\n先用自己的语言解释核心概念，再完成诊断测验。学习时间只能记录投入，不能单独证明理解。"
+    },
+    {
+      "id": 18,
+      "title": "最小生成树",
+      "category": "图与优化",
+      "description": "在无向连通带权图中以最小总代价连接全部顶点。",
+      "difficulty": 8,
+      "minutes": 55,
+      "importance": 0.8,
+      "x": 1090,
+      "y": 580,
+      "content": "## 核心概念\nKruskal 按边权升序选取不会形成环的边，并用并查集判断连接关系。Prim 逐步扩展已有树。\n\n## 理解一个例子\nn 个顶点的生成树有 n-1 条边。最小生成树优化全部连接的总权重，而非起点到每点的距离。\n\n## 常见误区\n有向图不直接适用普通最小生成树；非连通图得到的是最小生成森林。\n\n## 自检建议\n先用自己的语言解释核心概念，再完成诊断测验。学习时间只能记录投入，不能单独证明理解。"
+    }
+  ],
+  "relations": [
+    {
+      "source": 1,
+      "target": 2,
+      "type": "PREREQUISITE",
+      "weight": 1
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "type": "PREREQUISITE",
+      "weight": 1
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "type": "PREREQUISITE",
+      "weight": 1
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "type": "PREREQUISITE",
+      "weight": 1
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "type": "PREREQUISITE",
+      "weight": 1
+    },
+    {
+      "source": 3,
+      "target": 5,
+      "type": "PREREQUISITE",
+      "weight": 1
+    },
+    {
+      "source": 2,
+      "target": 6,
+      "type": "PREREQUISITE",
+      "weight": 1
+    },
+    {
+      "source": 4,
+      "target": 7,
+      "type": "PREREQUISITE",
+      "weight": 1
+    },
+    {
+      "source": 7,
+      "target": 8,
+      "type": "PREREQUISITE",
+      "weight": 1
+    },
+    {
+      "source": 8,
+      "target": 9,
+      "type": "PREREQUISITE",
+      "weight": 1
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "type": "PREREQUISITE",
+      "weight": 1
+    },
+    {
+      "source": 8,
+      "target": 11,
+      "type": "PREREQUISITE",
+      "weight": 1
+    },
+    {
+      "source": 2,
+      "target": 11,
+      "type": "PREREQUISITE",
+      "weight": 1
+    },
+    {
+      "source": 2,
+      "target": 12,
+      "type": "PREREQUISITE",
+      "weight": 1
+    },
+    {
+      "source": 3,
+      "target": 12,
+      "type": "PREREQUISITE",
+      "weight": 1
+    },
+    {
+      "source": 12,
+      "target": 13,
+      "type": "PREREQUISITE",
+      "weight": 1
+    },
+    {
+      "source": 7,
+      "target": 13,
+      "type": "PREREQUISITE",
+      "weight": 1
+    },
+    {
+      "source": 12,
+      "target": 14,
+      "type": "PREREQUISITE",
+      "weight": 1
+    },
+    {
+      "source": 5,
+      "target": 14,
+      "type": "PREREQUISITE",
+      "weight": 1
+    },
+    {
+      "source": 13,
+      "target": 15,
+      "type": "PREREQUISITE",
+      "weight": 1
+    },
+    {
+      "source": 12,
+      "target": 15,
+      "type": "PREREQUISITE",
+      "weight": 1
+    },
+    {
+      "source": 14,
+      "target": 16,
+      "type": "PREREQUISITE",
+      "weight": 1
+    },
+    {
+      "source": 11,
+      "target": 16,
+      "type": "PREREQUISITE",
+      "weight": 1
+    },
+    {
+      "source": 7,
+      "target": 17,
+      "type": "PREREQUISITE",
+      "weight": 1
+    },
+    {
+      "source": 1,
+      "target": 17,
+      "type": "PREREQUISITE",
+      "weight": 1
+    },
+    {
+      "source": 12,
+      "target": 18,
+      "type": "PREREQUISITE",
+      "weight": 1
+    },
+    {
+      "source": 11,
+      "target": 18,
+      "type": "PREREQUISITE",
+      "weight": 1
+    },
+    {
+      "source": 13,
+      "target": 14,
+      "type": "RELATED",
+      "weight": 0.6
+    },
+    {
+      "source": 16,
+      "target": 18,
+      "type": "RELATED",
+      "weight": 0.6
+    },
+    {
+      "source": 6,
+      "target": 10,
+      "type": "RELATED",
+      "weight": 0.6
+    },
+    {
+      "source": 9,
+      "target": 8,
+      "type": "PART_OF",
+      "weight": 0.7
+    },
+    {
+      "source": 10,
+      "target": 8,
+      "type": "PART_OF",
+      "weight": 0.7
+    }
+  ],
+  "questions": [
+    {
+      "knowledgeId": 1,
+      "prompt": "二分搜索的时间复杂度是？",
+      "options": [
+        "O(n)",
+        "O(log n)",
+        "O(n²)",
+        "O(1)"
+      ],
+      "answer": 1,
+      "explanation": "每次搜索将候选区间减半，因此迭代次数为对数级。",
+      "difficulty": 2
+    },
+    {
+      "knowledgeId": 1,
+      "prompt": "两个各执行 n 次的嵌套循环通常是？",
+      "options": [
+        "O(n)",
+        "O(log n)",
+        "O(n²)",
+        "O(2n)"
+      ],
+      "answer": 2,
+      "explanation": "外层 n 次，每次内层 n 次，总执行次数为 n²。",
+      "difficulty": 3
+    },
+    {
+      "knowledgeId": 1,
+      "prompt": "O(3n+20) 简化为？",
+      "options": [
+        "O(n)",
+        "O(3)",
+        "O(n²)",
+        "O(20)"
+      ],
+      "answer": 0,
+      "explanation": "渐近复杂度忽略常数系数和低阶项。",
+      "difficulty": 4
+    },
+    {
+      "knowledgeId": 2,
+      "prompt": "数组按合法索引访问的复杂度是？",
+      "options": [
+        "O(n)",
+        "O(1)",
+        "O(log n)",
+        "O(n²)"
+      ],
+      "answer": 1,
+      "explanation": "连续存储允许通过偏移直接定位。",
+      "difficulty": 2
+    },
+    {
+      "knowledgeId": 2,
+      "prompt": "数组头部插入通常需要？",
+      "options": [
+        "只修改指针",
+        "移动后续元素",
+        "重新排序",
+        "不改变内存"
+      ],
+      "answer": 1,
+      "explanation": "为了保留顺序，需要移动原有元素。",
+      "difficulty": 3
+    },
+    {
+      "knowledgeId": 2,
+      "prompt": "动态数组单次扩容最坏是？",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n²)"
+      ],
+      "answer": 2,
+      "explanation": "扩容需要分配新空间并复制已有 n 个元素。",
+      "difficulty": 4
+    },
+    {
+      "knowledgeId": 3,
+      "prompt": "单链表按索引查找通常是？",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n log n)"
+      ],
+      "answer": 2,
+      "explanation": "节点位置无法通过地址偏移直接计算，需要逐节点遍历。",
+      "difficulty": 3
+    },
+    {
+      "knowledgeId": 3,
+      "prompt": "已知前驱后插入节点主要操作是？",
+      "options": [
+        "移动全部节点",
+        "修改链接指针",
+        "排序全部节点",
+        "哈希所有节点"
+      ],
+      "answer": 1,
+      "explanation": "更新新节点和前驱的 next 即可完成连接。",
+      "difficulty": 4
+    },
+    {
+      "knowledgeId": 3,
+      "prompt": "链表相对数组的特点是？",
+      "options": [
+        "必须连续存储",
+        "可以不连续存储",
+        "支持常数时间随机访问",
+        "没有额外空间"
+      ],
+      "answer": 1,
+      "explanation": "链表通过指针连接独立分配的节点。",
+      "difficulty": 5
+    },
+    {
+      "knowledgeId": 4,
+      "prompt": "栈遵循什么顺序？",
+      "options": [
+        "FIFO",
+        "LIFO",
+        "随机顺序",
+        "按值排序"
+      ],
+      "answer": 1,
+      "explanation": "最后压入的元素最先弹出。",
+      "difficulty": 3
+    },
+    {
+      "knowledgeId": 4,
+      "prompt": "括号匹配最适合使用？",
+      "options": [
+        "栈",
+        "哈希排序",
+        "邻接矩阵",
+        "最小堆"
+      ],
+      "answer": 0,
+      "explanation": "栈保存尚未匹配的左括号，支持与最新左括号配对。",
+      "difficulty": 4
+    },
+    {
+      "knowledgeId": 4,
+      "prompt": "空栈弹出前应该？",
+      "options": [
+        "直接返回栈底",
+        "检查空栈",
+        "扩容",
+        "排序"
+      ],
+      "answer": 1,
+      "explanation": "必须处理空栈，避免无效访问。",
+      "difficulty": 5
+    },
+    {
+      "knowledgeId": 5,
+      "prompt": "队列的基本访问顺序是？",
+      "options": [
+        "LIFO",
+        "FIFO",
+        "按大小",
+        "按随机概率"
+      ],
+      "answer": 1,
+      "explanation": "先入队的元素先出队。",
+      "difficulty": 3
+    },
+    {
+      "knowledgeId": 5,
+      "prompt": "层序遍历使用什么结构？",
+      "options": [
+        "队列",
+        "栈",
+        "有序数组",
+        "字典树"
+      ],
+      "answer": 0,
+      "explanation": "队列按到达顺序处理同层和下一层节点。",
+      "difficulty": 4
+    },
+    {
+      "knowledgeId": 5,
+      "prompt": "循环队列指针加一常使用？",
+      "options": [
+        "取模",
+        "递归",
+        "二分",
+        "指数"
+      ],
+      "answer": 0,
+      "explanation": "取模让索引到达数组末尾后回到开头。",
+      "difficulty": 5
+    },
+    {
+      "knowledgeId": 6,
+      "prompt": "两个键映射到同一桶称为？",
+      "options": [
+        "扩容",
+        "碰撞",
+        "排序",
+        "删除"
+      ],
+      "answer": 1,
+      "explanation": "哈希值的映射位置可能相同，需要碰撞处理策略。",
+      "difficulty": 5
+    },
+    {
+      "knowledgeId": 6,
+      "prompt": "哈希表平均查找 O(1) 的条件包括？",
+      "options": [
+        "合理散列与负载",
+        "必须有序",
+        "必须无碰撞",
+        "必须完整二叉树"
+      ],
+      "answer": 0,
+      "explanation": "合理散列和适当负载可控制平均桶长度。",
+      "difficulty": 6
+    },
+    {
+      "knowledgeId": 6,
+      "prompt": "链地址法使用什么处理碰撞？",
+      "options": [
+        "桶内链表或类似结构",
+        "忽略新键",
+        "删除旧键",
+        "二分矩阵"
+      ],
+      "answer": 0,
+      "explanation": "同一桶的记录组织在链表或其他可搜索结构中。",
+      "difficulty": 7
+    },
+    {
+      "knowledgeId": 7,
+      "prompt": "正确的递归必须具备？",
+      "options": [
+        "终止条件和规模推进",
+        "只有循环",
+        "无限调用",
+        "全局排序"
+      ],
+      "answer": 0,
+      "explanation": "递归必须在有限步骤内达到边界条件。",
+      "difficulty": 4
+    },
+    {
+      "knowledgeId": 7,
+      "prompt": "归并排序的复杂度是？",
+      "options": [
+        "O(n²)",
+        "O(n log n)",
+        "O(1)",
+        "O(log n)"
+      ],
+      "answer": 1,
+      "explanation": "log n 层递归，每层合并总成本 O(n)。",
+      "difficulty": 5
+    },
+    {
+      "knowledgeId": 7,
+      "prompt": "记忆化通常解决？",
+      "options": [
+        "重复子问题",
+        "输入输出",
+        "内存连续性",
+        "哈希碰撞"
+      ],
+      "answer": 0,
+      "explanation": "缓存子问题结果可减少重复计算。",
+      "difficulty": 6
+    },
+    {
+      "knowledgeId": 8,
+      "prompt": "二叉树每个节点最多有几个孩子？",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "任意"
+      ],
+      "answer": 1,
+      "explanation": "二叉树最多包含左、右两个子节点。",
+      "difficulty": 4
+    },
+    {
+      "knowledgeId": 8,
+      "prompt": "一般二叉树一定满足？",
+      "options": [
+        "键值有序",
+        "高度平衡",
+        "每节点至多两个孩子",
+        "完全二叉树结构"
+      ],
+      "answer": 2,
+      "explanation": "有序、平衡和完全都是额外约束。",
+      "difficulty": 5
+    },
+    {
+      "knowledgeId": 8,
+      "prompt": "满二叉树叶子数为 L 时内部节点数为？",
+      "options": [
+        "L",
+        "L-1",
+        "2L",
+        "L+1"
+      ],
+      "answer": 1,
+      "explanation": "每个内部节点有两个孩子，利用总边数等于总节点数减一可得结论。",
+      "difficulty": 6
+    },
+    {
+      "knowledgeId": 9,
+      "prompt": "根 A、左 B、右 C 的中序序列是？",
+      "options": [
+        "A B C",
+        "B A C",
+        "B C A",
+        "C A B"
+      ],
+      "answer": 1,
+      "explanation": "中序顺序为左、根、右。",
+      "difficulty": 5
+    },
+    {
+      "knowledgeId": 9,
+      "prompt": "后序遍历最后访问？",
+      "options": [
+        "根节点",
+        "左叶子",
+        "右叶子",
+        "最小键"
+      ],
+      "answer": 0,
+      "explanation": "后序先遍历左右子树，最后处理根。",
+      "difficulty": 6
+    },
+    {
+      "knowledgeId": 9,
+      "prompt": "一般二叉树中序结果是否一定有序？",
+      "options": [
+        "一定",
+        "不一定",
+        "只与高度有关",
+        "只与节点数有关"
+      ],
+      "answer": 1,
+      "explanation": "有序结果依赖二叉搜索树的键值约束。",
+      "difficulty": 7
+    },
+    {
+      "knowledgeId": 10,
+      "prompt": "二叉搜索树的左子树键通常？",
+      "options": [
+        "小于根键",
+        "大于根键",
+        "任意",
+        "等于右子树"
+      ],
+      "answer": 0,
+      "explanation": "搜索树根据键大小划分左右子树。",
+      "difficulty": 6
+    },
+    {
+      "knowledgeId": 10,
+      "prompt": "升序插入未平衡的 BST 最坏查找是？",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n²)"
+      ],
+      "answer": 2,
+      "explanation": "可能形成链状结构，需要遍历全部节点。",
+      "difficulty": 7
+    },
+    {
+      "knowledgeId": 10,
+      "prompt": "删除有两个孩子的节点可用？",
+      "options": [
+        "中序后继替换",
+        "任意叶子替换",
+        "直接丢弃子树",
+        "反转全部节点"
+      ],
+      "answer": 0,
+      "explanation": "中序后继是右子树最小键，可保留搜索树顺序。",
+      "difficulty": 8
+    },
+    {
+      "knowledgeId": 11,
+      "prompt": "小根堆的根是？",
+      "options": [
+        "最大元素",
+        "最小元素",
+        "中位数",
+        "最后元素"
+      ],
+      "answer": 1,
+      "explanation": "父键不大于子键，根是全局最小。",
+      "difficulty": 6
+    },
+    {
+      "knowledgeId": 11,
+      "prompt": "0 起始堆数组左孩子索引是？",
+      "options": [
+        "2i",
+        "2i+1",
+        "i+1",
+        "i/2"
+      ],
+      "answer": 1,
+      "explanation": "完全二叉树的按层存储决定索引关系。",
+      "difficulty": 7
+    },
+    {
+      "knowledgeId": 11,
+      "prompt": "自底向上建堆的复杂度是？",
+      "options": [
+        "O(n)",
+        "O(n²)",
+        "O(1)",
+        "O(log n)"
+      ],
+      "answer": 0,
+      "explanation": "大部分节点在低层，按高度加权的调整成本总和为 O(n)。",
+      "difficulty": 8
+    },
+    {
+      "knowledgeId": 12,
+      "prompt": "稀疏图通常适合？",
+      "options": [
+        "邻接表",
+        "完整矩阵",
+        "只有顶点数组",
+        "只有权重数组"
+      ],
+      "answer": 0,
+      "explanation": "邻接表按实际边存储，通常占 O(n+m) 空间。",
+      "difficulty": 5
+    },
+    {
+      "knowledgeId": 12,
+      "prompt": "有向边 A→B 表示先修时应解读为？",
+      "options": [
+        "先学 A 再学 B",
+        "先学 B 再学 A",
+        "必须同时学",
+        "没有方向"
+      ],
+      "answer": 0,
+      "explanation": "方向从前置知识指向依赖它的后续知识。",
+      "difficulty": 6
+    },
+    {
+      "knowledgeId": 12,
+      "prompt": "邻接矩阵判断一条边是否存在通常是？",
+      "options": [
+        "O(n)",
+        "O(1)",
+        "O(m)",
+        "O(n+m)"
+      ],
+      "answer": 1,
+      "explanation": "可以直接读取对应行列单元。",
+      "difficulty": 7
+    },
+    {
+      "knowledgeId": 13,
+      "prompt": "DFS 常使用的结构是？",
+      "options": [
+        "栈或递归",
+        "只有队列",
+        "排序堆",
+        "循环数组"
+      ],
+      "answer": 0,
+      "explanation": "栈保存尚未完成的分支探索状态。",
+      "difficulty": 6
+    },
+    {
+      "knowledgeId": 13,
+      "prompt": "DFS 是否保证无权图最短路径？",
+      "options": [
+        "保证",
+        "不保证",
+        "只要有向就保证",
+        "只要连通就保证"
+      ],
+      "answer": 1,
+      "explanation": "首次到达节点的分支可能比其他分支更长。",
+      "difficulty": 7
+    },
+    {
+      "knowledgeId": 13,
+      "prompt": "访问到递归栈中的节点说明？",
+      "options": [
+        "存在环",
+        "已找到最短路",
+        "图无边",
+        "所有节点完成"
+      ],
+      "answer": 0,
+      "explanation": "回边连接到当前分支祖先，会形成有向环。",
+      "difficulty": 8
+    },
+    {
+      "knowledgeId": 14,
+      "prompt": "BFS 主要使用？",
+      "options": [
+        "队列",
+        "递归栈",
+        "排序数组",
+        "并查集"
+      ],
+      "answer": 0,
+      "explanation": "FIFO 支持按距离逐层探索。",
+      "difficulty": 6
+    },
+    {
+      "knowledgeId": 14,
+      "prompt": "BFS 求最短路适用于？",
+      "options": [
+        "无权或等权图",
+        "任意负权图",
+        "任意不等权图",
+        "只有完全图"
+      ],
+      "answer": 0,
+      "explanation": "每跨一条边增加相同代价时，层数对应距离。",
+      "difficulty": 7
+    },
+    {
+      "knowledgeId": 14,
+      "prompt": "访问标记通常应该在何时设置？",
+      "options": [
+        "入队时",
+        "出队后再等待",
+        "所有搜索结束",
+        "从不标记"
+      ],
+      "answer": 0,
+      "explanation": "入队时标记可防止同一节点多次进入队列。",
+      "difficulty": 8
+    },
+    {
+      "knowledgeId": 15,
+      "prompt": "Kahn 算法首先选择？",
+      "options": [
+        "入度为 0 的节点",
+        "最大入度节点",
+        "难度最高节点",
+        "任意节点"
+      ],
+      "answer": 0,
+      "explanation": "入度为 0 意味着当前所有先修依赖都已满足。",
+      "difficulty": 7
+    },
+    {
+      "knowledgeId": 15,
+      "prompt": "拓扑排序输出少于全部节点说明？",
+      "options": [
+        "有环",
+        "无环",
+        "没有边",
+        "顺序唯一"
+      ],
+      "answer": 0,
+      "explanation": "环上的节点无法获得零入度，无法全部输出。",
+      "difficulty": 8
+    },
+    {
+      "knowledgeId": 15,
+      "prompt": "保持先修关系时难度优先应在哪进行？",
+      "options": [
+        "就绪集合内部",
+        "最终序列任意重排",
+        "全部节点先排序",
+        "忽略入度"
+      ],
+      "answer": 0,
+      "explanation": "只在当前可学习节点中择优，不会提前学习依赖未满足的节点。",
+      "difficulty": 9
+    },
+    {
+      "knowledgeId": 16,
+      "prompt": "Dijkstra 要求边权满足？",
+      "options": [
+        "非负",
+        "必须负数",
+        "全为 1",
+        "必须整数"
+      ],
+      "answer": 0,
+      "explanation": "非负边权保证已选定的最短距离不会被后来路径减小。",
+      "difficulty": 8
+    },
+    {
+      "knowledgeId": 16,
+      "prompt": "松弛操作的意义是？",
+      "options": [
+        "用经当前节点的更短路径更新距离",
+        "删掉顶点",
+        "反转所有边",
+        "排序顶点名称"
+      ],
+      "answer": 0,
+      "explanation": "如果 dist[u]+w(u,v) 更小，就更新 dist[v] 与前驱。",
+      "difficulty": 9
+    },
+    {
+      "knowledgeId": 16,
+      "prompt": "使用堆时遇到过期距离条目应该？",
+      "options": [
+        "忽略该条目",
+        "清空全部结果",
+        "更新成更大距离",
+        "停止算法"
+      ],
+      "answer": 0,
+      "explanation": "条目比当前最优距离更大时已失效，不必重复处理。",
+      "difficulty": 10
+    },
+    {
+      "knowledgeId": 17,
+      "prompt": "动态规划首先需要明确？",
+      "options": [
+        "状态的含义",
+        "界面颜色",
+        "机器品牌",
+        "文件格式"
+      ],
+      "answer": 0,
+      "explanation": "状态决定了需要保存的信息和合法转移。",
+      "difficulty": 8
+    },
+    {
+      "knowledgeId": 17,
+      "prompt": "0/1 背包一维容量循环通常？",
+      "options": [
+        "倒序",
+        "正序",
+        "随机",
+        "不循环"
+      ],
+      "answer": 0,
+      "explanation": "倒序避免同一轮使用当前物品更新后的状态而重复选择它。",
+      "difficulty": 9
+    },
+    {
+      "knowledgeId": 17,
+      "prompt": "动态规划适合的特征包括？",
+      "options": [
+        "重叠子问题与最优子结构",
+        "只有连续存储",
+        "只有哈希键",
+        "没有任何依赖"
+      ],
+      "answer": 0,
+      "explanation": "复用子问题解并由子问题组合整体最优解。",
+      "difficulty": 10
+    },
+    {
+      "knowledgeId": 18,
+      "prompt": "n 顶点生成树有多少边？",
+      "options": [
+        "n-1",
+        "n",
+        "n+1",
+        "n²"
+      ],
+      "answer": 0,
+      "explanation": "树连通且无环，总边数为节点数减一。",
+      "difficulty": 8
+    },
+    {
+      "knowledgeId": 18,
+      "prompt": "Kruskal 常用什么判断成环？",
+      "options": [
+        "并查集",
+        "递归计时器",
+        "哈希碰撞",
+        "数组二分"
+      ],
+      "answer": 0,
+      "explanation": "两个端点属于同一连通分量时，加入边会成环。",
+      "difficulty": 9
+    },
+    {
+      "knowledgeId": 18,
+      "prompt": "最小生成树与最短路径树的目标？",
+      "options": [
+        "不同",
+        "总是相同",
+        "都只最小化边数",
+        "都要求有向图"
+      ],
+      "answer": 0,
+      "explanation": "前者最小化全树总权重，后者最小化起点到各节点的距离。",
+      "difficulty": 10
+    }
+  ]
+}
